@@ -1,1 +1,1 @@
-delete from houses where id = $1;
+delete from houses where houseid = $1;

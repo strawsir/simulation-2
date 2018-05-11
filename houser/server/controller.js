@@ -10,12 +10,8 @@ module.exports={
         })
     },
     deleteHome:(req, res)=>{
-        const dbInstance = req.app.get('db');
         const {params} = req;
-
-        dbInstance.deleteHouse([params.id])
-        .then( () => res.status(200).send())
-        .catch(()=>res.status(500).send())
+        req.app.get('db').deleteHouse([params.id]).then(()=> res.status(200).send()).catch(()=>res.status(500).send())
 }
 
     

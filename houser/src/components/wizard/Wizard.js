@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom';
+import StepOne from '../steps/StepOne';
+import {Route} from 'react-router-dom';
+import StepTwo from '../steps/StepTwo';
+import StepThree from '../steps/StepThree';
 
 
 class Wizard extends Component{
@@ -22,11 +26,9 @@ class Wizard extends Component{
             <div>Wizard
 
             <Link to='/'>CANCEL</Link>
-            <input type="text" placeholder='PROPERTY NAME'/>
-            <input type="text" placeholder='PROPERTY ADDRESS'/>
-            <input type="text" placeholder='PROPERTY CITY'/>
-            <input type="text" placeholder='PROPERTY STATE'/>
-            <input type="text" placeholder='PROPERTY ZIPCODE'/>
+            <Route path='/wizard/stepOne' component={StepOne}/>
+            <Route path='/wizard/stepTwo' component={StepTwo}/>
+            <Route path='/wizard/stepThree' component={StepThree}/>
             
             </div>
         )
